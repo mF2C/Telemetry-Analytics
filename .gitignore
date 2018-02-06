@@ -1,0 +1,15 @@
+env/
+docs/*
+/cover
+/logs
+kdev/
+.idea/
+*~
+*.pyc
+*.out
+.coverage
+.project
+.pydevproject
+*.komodoproject
+.vscode/
+MANIFEST

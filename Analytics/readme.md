@@ -1,0 +1,3 @@
+## Introduction
+
+Data will flow through the Analytics module from the multiple instrumentation sources allowing it to perform a number of tasks. An extract of the Landscape will be queried and mapped to the telemetry allowing the different analytics algorithms to contextualize the landscape and make informed decisions. The derived heuristics and models will then be fed back to the Recommender system. This allows the potential to have the recipes evolve over time. Analytics may suggest recommendations to actuate directly on currently running services and immediately trigger change requests to the current system
