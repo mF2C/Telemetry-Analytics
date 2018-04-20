@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  influxdb:
+    image: influxdb
+    ports:
+      - "8086:8086"
+    env_file:
+      - influxdb.env
+  snap:
+    image: intelsdi/snap:precise
+    ports:
+      - "8181:8181"
+    depends_on:
+      - influxdb
+    env_file:
+      - snap.env
