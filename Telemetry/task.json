@@ -7,6 +7,10 @@
    "max-failures": 10,
    "workflow":{
       "collect":{
+         "config": {
+         	"/intel/docker": {
+         		"procfs": "/proc_host"}
+         },
          "metrics":{
             "/intel/*":{
             }

@@ -6,13 +6,16 @@ services:
     image: influxdb
     ports:
       - "8086:8086"
+    volumes: ['/storage/Local/influxdb:/var/lib/influxdb']
     env_file:
       - influxdb.env
   snap:
     image: intelsdi/snap:precise
     ports:
       - "8181:8181"
+    volumes: ['/proc:/proc_host', '/sys/fs/cgroup:/sys/fs/cgroup', '/var/run/docker.sock:/var/run/docker.sock']
     depends_on:
       - influxdb
     env_file:
       - snap.env
+    

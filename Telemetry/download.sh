@@ -10,7 +10,6 @@ wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-cpu/latest/l
 wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-docker/latest/linux/x86_64/snap-plugin-collector-docker -O snap-plugin-collector-docker
 wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-disk/latest/linux/x86_64/snap-plugin-collector-disk -O snap-plugin-collector-disk 
 wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-interface/latest/linux/x86_64/snap-plugin-collector-interface -O snap-plugin-collector-interface
-wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-use/latest/linux/x86_64/snap-plugin-collector-use -O snap-plugin-collector-use
 # publishers
 wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-publisher-influxdb/latest/linux/x86_64/snap-plugin-publisher-influxdb -O snap-plugin-publisher-influxdb
 
@@ -21,7 +20,6 @@ wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-publisher-influxdb/lat
 ./snaptel plugin load snap-plugin-collector-docker
 ./snaptel plugin load snap-plugin-collector-disk
 ./snaptel plugin load snap-plugin-collector-interface
-./snaptel plugin load snap-plugin-collector-use
 ./snaptel plugin load snap-plugin-publisher-influxdb
 
 # configure the plugins
