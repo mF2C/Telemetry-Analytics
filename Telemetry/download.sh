@@ -14,13 +14,13 @@ wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-collector-interface/la
 wget http://snap.ci.snap-telemetry.io/plugins/snap-plugin-publisher-influxdb/latest/linux/x86_64/snap-plugin-publisher-influxdb -O snap-plugin-publisher-influxdb
 
 # load plugins 
-./snaptel plugin load snap-plugin-collector-psutil
-./snaptel plugin load snap-plugin-collector-cpu
-./snaptel plugin load snap-plugin-collector-meminfo
-./snaptel plugin load snap-plugin-collector-docker
-./snaptel plugin load snap-plugin-collector-disk
-./snaptel plugin load snap-plugin-collector-interface
-./snaptel plugin load snap-plugin-publisher-influxdb
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-psutil
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-cpu
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-meminfo
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-docker
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-disk
+./snaptel --url http://snap:8181 plugin load snap-plugin-collector-interface
+./snaptel --url http://snap:8181 plugin load snap-plugin-publisher-influxdb
 
 # configure the plugins
-./snaptel task create -t task.json
+./snaptel --url http://snap:8181 task create -t task.json

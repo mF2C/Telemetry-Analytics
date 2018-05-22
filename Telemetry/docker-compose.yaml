@@ -2,11 +2,15 @@ version: '3.1'
 
 services:
 
+  snaptemp:
+    build: mf2c/snaptemp:latest
+    command: sh /download.sh
   influxdb:
     image: influxdb
     ports:
       - "8086:8086"
-    volumes: ['/storage/Local/influxdb:/var/lib/influxdb']
+    volumes: 
+      - influx:/var/lib/influxdb
     env_file:
       - influxdb.env
   snap:
@@ -18,4 +22,6 @@ services:
       - influxdb
     env_file:
       - snap.env
-    
+ 
+volumes:
+  influx: {}   
