@@ -3,8 +3,10 @@ version: '3.1'
 services:
 
   snaptemp:
-    build: mf2c/snaptemp:latest
+    image: mf2c/snaptemp:0.1
     command: sh /download.sh
+    depends_on:
+      - snap
   influxdb:
     image: influxdb
     ports:
@@ -14,7 +16,7 @@ services:
     env_file:
       - influxdb.env
   snap:
-    image: intelsdi/snap:precise
+    image: intelsdi/snap:xenial
     ports:
       - "8181:8181"
     volumes: ['/proc:/proc_host', '/sys/fs/cgroup:/sys/fs/cgroup', '/var/run/docker.sock:/var/run/docker.sock']
