@@ -1,3 +1,8 @@
+#configure task with the hostname
+sed "s/HOSTNAME/$HOSTNAME/" ./task.json > ./task.tmp
+mv task.tmp task.json
+chmod +x task.json
+
 # download snap framework
 wget http://snap.ci.snap-telemetry.io/snap/latest_build/linux/x86_64/snaptel -O snaptel
 chmod +x snaptel

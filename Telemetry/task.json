@@ -4,18 +4,28 @@
       "type":"simple",
       "interval":"1s"
    },
-   "max-failures": 10,
+   "max-failures": -1,
    "workflow":{
       "collect":{
          "config": {
-         	"/intel/docker": {
-         		"procfs": "/proc_host"}
+         	"/intel/docker": {"procfs": "/proc_host"}
          },
          "metrics":{
             "/intel/*":{
             }
          },
-         "publish":[
+		"tags": {
+                "/intel/procfs": {
+                    "source": "HOSTNAME"
+                },
+                "/intel/psutil": {
+                    "source": "HOSTNAME"
+                },
+		"/intel/docker": {
+                    "source": "HOSTNAME"
+		}
+            },
+	    "publish":[
             {
                "plugin_name":"influxdb",
                "config":{
